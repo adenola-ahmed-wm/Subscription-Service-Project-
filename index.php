@@ -38,6 +38,28 @@ if(isset($_POST['submit'])) {
 <?php
 
 ?>
-
+<header>
+    <h1>Phones</h1>
+</header>
+<!-- Each image is 350px by 233px -->
+<div class="photobanner">
+    <img class="first" src="http://s.tmocache.com/content/dam/tmo/en-p/cell-phones/apple-iphone-6s/rose-gold/stills/browse-apple-iphone-6s-rose-gold.jpg/_jcr_content/renditions/cq5dam.web.280.280.jpeg" alt="" />
+    <img src="http://s.tmocache.com/content/dam/tmo/en-p/cell-phones/samsung-galaxy-s-6-edge/black-sapphire/stills/browse-samsung-galaxy-s-6-edge-black-sapphire.jpg/_jcr_content/renditions/cq5dam.web.280.280.jpeg" alt="" />
+    <img src="http://s.tmocache.com/content/dam/tmo/en-p/cell-phones/lg-g4/metallic-gray/stills/browse-lg-g4-metallic-gray.jpg/_jcr_content/renditions/cq5dam.web.280.280.jpeg" alt="" />
+    <img src="http://s.tmocache.com/content/dam/tmo/en-p/cell-phones/htc-one-m9/gunmetal/stills/browse-htc-one-m9-gunmetal.jpg/_jcr_content/renditions/cq5dam.web.280.280.jpeg" alt="" />
+    <img src="http://s.tmocache.com/content/dam/tmo/en-p/cell-phones/lg-leon-lte/all/stills/browse-lg-leon-lte-all.jpg/_jcr_content/renditions/cq5dam.web.280.280.jpeg" alt="" />
+    <img src="http://s.tmocache.com/content/dam/tmo/en-p/cell-phones/microsoft-lumia-435/all/stills/browse-microsoft-lumia-435-all.jpg/_jcr_content/renditions/cq5dam.web.280.280.jpeg" alt="" />
+    <img src="http://s.tmocache.com/content/dam/tmo/en-p/cell-phones/zte-zmax/all/stills/browse-zte-zmax-all.jpg/_jcr_content/renditions/cq5dam.web.280.280.jpeg" alt="" />
+    <img src="http://s.tmocache.com/content/dam/tmo/en-p/cell-phones/zte-avid-plus/all/stills/browse-zte-avid-plus-all.jpg/_jcr_content/renditions/cq5dam.web.280.280.jpeg" alt="" />
+    <img src="http://s.tmocache.com/content/dam/tmo/en-p/cell-phones/blackberry-priv/all/stills/browse-blackberry-priv-all.jpg/_jcr_content/renditions/cq5dam.web.280.280.jpeg" alt="" />
+</div>
+<br><br>
+<div>
+    <?php
+    getProducts($dbh);
+    ?>
+</div>
+</body>
+</html>
 </body>
 </html>

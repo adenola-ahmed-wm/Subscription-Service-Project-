@@ -1,22 +1,3 @@
-.error {
-    font-weight: bold;
-    color: #FF0000;
-}
-.topscoreheader {
-    text-align: center;
-    font-size: 200%;
-    background-color: #36407F;
-    color: lightblue;
-}
-.score {
-    font-size:150%;
-    color: #36407F;
-}
-.scoreinfo {
-    vertical-align: top;
-    padding-right:15px;
-}
-@import url(https://fonts.googleapis.com/css?family=Roboto:400,300,100,500);
 body,
 html {
     margin: 0;
