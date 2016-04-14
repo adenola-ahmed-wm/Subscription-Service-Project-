@@ -1,630 +1,384 @@
-
-/* entypo */
-
-[class*="entypo-"]:before {
-    font-family: 'entypo', sans-serif;
+.error {
+     font-weight: bold;
+     color: #FF0000;
+ }
+.topscoreheader {
+    text-align: center;
+    font-size: 200%;
+    background-color: #36407F;
 }
-
-
-/* fontawesome */
-
-[class*="fontawesome-"]:before {
-    font-family: 'FontAwesome', sans-serif;
+.score {
+    font-size:150%;
+    color: #36407F;
 }
-
-* {
+.scoreinfo {
+    vertical-align: top;
+    padding-right:15px;
+}  #cssmenu {
+    background: #333;
+    margin: 0;
+    width: 100%;
+    min-width: 850px;
+    padding: 0;
+    line-height: 1;
+    display: block;
+    position: relative;
+    font-family: 'PT Sans', sans-serif;
+    margin-right: auto;
+    margin-left: auto;
+}
+#cssmenu ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: block;
+}
+#cssmenu ul:after,
+#cssmenu:after {
+    content: " ";
+    display: block;
+    font-size: 0;
+    height: 0;
+    clear: both;
+    visibility: hidden;
+}
+#cssmenu ul li {
+    margin: 0;
+    padding: 0;
+    display: block;
+    position: relative;
+}
+#cssmenu ul li a {
+    text-decoration: none;
+    display: block;
+    margin: 0;
+    -webkit-transition: color .2s ease;
+    -moz-transition: color .2s ease;
+    -ms-transition: color .2s ease;
+    -o-transition: color .2s ease;
+    transition: color .2s ease;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
 }
-
-
-/* This is used to fix an specific width even when you add padding */
-
-h1 {
-    font-family: sans-serif;
-    font-size: 27px;
-    font-weight: 900;
-    color: #2e3641;
-    margin: 0 0 10px 0;
+#cssmenu ul li ul {
+    position: absolute;
+    left: -9999px;
+    top: auto;
 }
-
-h2 {
-    font-family: sans-serif;
-    font-size: 24px;
-    color: #ffffff;
-    margin: 0;
-    padding: 15px 0 0 20px;
+#cssmenu ul li ul li {
+    max-height: 0;
+    position: absolute;
+    -webkit-transition: max-height 0.4s ease-out;
+    -moz-transition: max-height 0.4s ease-out;
+    -ms-transition: max-height 0.4s ease-out;
+    -o-transition: max-height 0.4s ease-out;
+    transition: max-height 0.4s ease-out;
+    background: #ffffff;
 }
-
-a {
-    text-decoration: none;
-    color: #9eb2c0;
+#cssmenu ul li ul li.has-sub:after {
+    display: block;
+    position: absolute;
+    content: "";
+    height: 10px;
+    width: 10px;
+    border-radius: 5px;
+    background: blue;
+    z-index: 1;
+    top: 13px;
+    right: 15px;
 }
-
-a:hover {
-    text-decoration: underline;
+#cssmenu.align-right ul li ul li.has-sub:after {
+    right: auto;
+    left: 15px;
 }
-
-p {
-    font-size: 13px;
-    font-family: sans-serif;
-    color: #9eb2c0;
-    margin: 15px 0 5px 20px;
+#cssmenu ul li ul li.has-sub:before {
+    display: block;
+    position: absolute;
+    content: "";
+    height: 0;
+    width: 0;
+    border: 3px solid transparent;
+    border-left-color: #ffffff;
+    z-index: 2;
+    top: 15px;
+    right: 15px;
 }
-
-ul {
-    list-style: none;
-    margin: 0;
-    padding: 0;
+#cssmenu.align-right ul li ul li.has-sub:before {
+    right: auto;
+    left: 15px;
+    border-left-color: transparent;
+    border-right-color: #ffffff;
 }
-
-textarea {
-    border-color: #dae4eb;
-    color: #dae4eb;
+#cssmenu ul li ul li a {
+    font-size: 14px;
+    font-weight: 400;
+    text-transform: none;
+    color: #000000;
+    letter-spacing: 0;
+    display: block;
+    width: 170px;
+    padding: 11px 10px 11px 20px;
 }
-
-input[type=text] {
-    border: solid 1px #dae4eb;
-    margin: 20px 0 0 20px;
-    padding-left: 10px;
+#cssmenu ul li ul li:hover > a,
+#cssmenu ul li ul li.active > a {
+    color: darkgrey;
 }
-
-input[type=text]::-webkit-input-placeholder {
-    /* WebKit browsers */
-    color: #dae4eb;
-    font-weight: bold;
+#cssmenu ul li ul li:hover:after,
+#cssmenu ul li ul li.active:after {
+    background: darkgrey;
 }
-
-input[type=text]:-moz-placeholder {
-    /* Mozilla Firefox 4 to 18 */
-    color: #dae4eb;
-    font-weight: bold;
+#cssmenu ul li ul li:hover > ul {
+    left: 100%;
+    top: 0;
 }
-
-input[type=text]::-moz-placeholder {
-    /* Mozilla Firefox 19+ */
-    color: #dae4eb;
-    font-weight: bold;
-}
-
-input[type=text]:-ms-input-placeholder {
-    /* Internet Explorer 10+ */
-    color: #dae4eb;
-    font-weight: bold;
-}
-
-input[type=checkbox] {
-    display: none;
-}
-
-input[type=checkbox] + label {
-    cursor: pointer;
+#cssmenu ul li ul li:hover > ul > li {
+    max-height: 72px;
     position: relative;
 }
-
-input[type=checkbox] + label:before {
-    border: 1px solid #dae4eb;
-    color: #ffffff;
-    font-family: FontAwesome;
-    font-size: 22px;
-    content: "\f00c";
-    height: 30px;
-    line-height: 30px;
-    width: 30px;
+#cssmenu > ul > li {
+    float: left;
+}
+#cssmenu.align-center > ul > li {
+    float: none;
+    display: inline-block;
+}
+#cssmenu.align-center > ul {
     text-align: center;
 }
-
-input[type=checkbox]:checked + label:before {
-    color: #a8bd44;
-    content: "\f00c";
-}
-
-.container {
-    background-color: #ffffff;
-}
-
-.bar {
-    background-color: #2e3641;
-    text-align: center;
-}
-
-.bar a {
-    color: #c1cfd9;
-    -webkit-transition: background .2s ease-out;
-    -moz-transition: background .2s ease-out;
-    -o-transition: background .2s ease-out;
-    -ms-transition: background .2s ease-out;
-    transition: background .2s ease-out;
-}
-
-.bar a:hover {
-    text-decoration: none;
-    background: #242B33;
-}
-
-.title-bar {
-    height: 55px;
+#cssmenu.align-center ul ul {
     text-align: left;
 }
-
-.more-bar {
-    background-color: #c1cfd9;
-    position: relative;
-    /*To make absolute position in .scroll (Check "Recent Posts" and "Categories")*/
-}
-
-.btn {
-    display: inline-block;
-    line-height: 35px;
-    font-size: 15px;
-    font-family: sans-serif;
-    font-weight: bold;
-    text-transform: uppercase;
-    background: #f97e76;
-    color: #ffffff;
-    text-align: center;
-    -webkit-transition: background .5s ease-out;
-    -moz-transition: background .5s ease-out;
-    -o-transition: background .5s ease-out;
-    -ms-transition: background .5s ease-out;
-    transition: background .5s ease-out;
-}
-
-.btn:hover {
-    text-decoration: none;
-    background: #F75145;
-}
-
-.lupa {
-    font-size: 20px;
-    color: #c1cfd9;
-    position: absolute;
-}
-
-#main-container {
-    width: 1600px;
-    height: 1200px;
-    background-color: #e9f0f4;
-    margin: 0 auto;
-    padding: 80px;
-}
-
-#left-container {
-    width: 570px;
-    float: left;
-}
-
-#newPost {
-    height: 675px;
-    box-shadow: rgba(0, 0, 0, 0.2) 10px 10px 10px;
-}
-
-.side {
-    width: 90px;
-    height: 675px;
-    float: left;
-}
-
-.side a {
-    display: block;
-    line-height: 90px;
-    font-size: 22px;
-}
-
-#document {
-    background: #ffffff;
-    color: #2e3641;
-}
-
-#document:hover {
-    text-decoration: none;
-}
-
-.newPostContent {
-    width: 480px;
-    float: left;
-    padding-left: 40px;
-    padding-top: 70px;
-}
-
-#post-title {
-    width: 400px;
-    height: 45px;
-    margin: 0 0 20px 0;
-    padding-left: 15px;
-    font-size: 22px;
-    font-weight: bold;
-}
-
-.format-bar {
-    height: 45px;
-    width: 400px;
-}
-
-.format-bar a {
-    font-size: 12px;
-    display: block;
-    float: left;
-    width: 45px;
-    line-height: 45px;
-    border-right: solid 1px #3a414d;
-}
-
-.post-body {
-    width: 400px;
-    height: 290px;
-    color: black;
-    margin: 0 0 20px 0;
-}
-
-.newPostContent .btn {
-    width: 120px;
-    line-height: 45px;
-}
-
-.disabled {
-    background: #c1cfd9;
-}
-
-.disabled:hover {
-    background: #c1cfd9;
-    cursor: default;
-}
-
-#messages {
-    height: 90px;
-    margin-top: 60px;
-    position: relative;
-    box-shadow: rgba(0, 0, 0, 0.2) 10px 10px 10px;
-}
-
-#messages a {
-    display: inline-block;
-    float: left;
-    width: 90px;
-    line-height: 90px;
-    border-right: solid 1px #3a414d;
-    font-size: 26px;
-}
-
-#messages .lupa {
-    left: 305px;
-    bottom: 34px;
-}
-
-#search-message {
-    width: 245px;
-    height: 35px;
-    border: solid 1px #49525d;
-    background: #3d444e;
-    color: white;
-    margin: 27.5px auto 0;
-    padding-left: 35px;
-}
-
-#suscribe {
-    height: 160px;
-    margin-top: 60px;
-    box-shadow: rgba(0, 0, 0, 0.2) 10px 10px 10px;
-}
-
-#suscribe input[type=text] {
-    width: 400px;
-    height: 35px;
-    margin: 0 0 0 20px;
-}
-
-#suscribe .btn {
-    width: 120px;
-    margin-left: 5px;
-}
-
-#middle-container {
-    width: 430px;
-    float: left;
-    margin: 0px 60px;
-}
-
-#relatedPosts {
-    height: 390px;
-    box-shadow: rgba(0, 0, 0, 0.2) 10px 10px 10px;
-}
-
-.rpost {
-    margin-bottom: 30px;
-    width: 310px;
-    display: inline-block;
-}
-
-.rpost a:first-child {
-    color: #f97e76;
-    font-size: 16px;
-    font-weight: bold;
-    line-height: 150%;
-}
-
-.rpost-checkbox + label:before {
-    position: absolute;
-    left: 65px;
-    top: -45px;
-}
-
-#tags {
-    height: 165px;
-    margin-top: 60px;
-    box-shadow: rgba(0, 0, 0, 0.2) 10px 10px 10px;
-}
-
-#tags input[type=text] {
-    width: 300px;
-    height: 35px;
-}
-
-#tags .btn {
-    width: 80px;
-    margin: 20px 0 0 5px;
-}
-
-#tags p {
-    font-size: 11px;
-    margin-top: 8px;
-}
-
-#map {
-    height: 370px;
-    margin-top: 60px;
-    position: relative;
-    box-shadow: rgba(0, 0, 0, 0.2) 10px 10px 10px;
-}
-
-.map {
-    width: 430px;
-    height: 295px;
-    background: #ddcec2;
-    position: relative;
-}
-
-.map .btn {
-    width: 35px;
-    font-size: 13px;
-    display: block;
-    position: absolute;
-    top: 20px;
-    left: 20px;
-}
-
-.map .btn:last-child {
-    top: 57px;
-}
-
-#map input[type=text] {
-    width: 260px;
-    height: 35px;
-    padding-left: 35px;
-}
-
-#map .lupa {
-    bottom: 26px;
-    left: 26px;
-}
-
-#map .addMap {
-    width: 120px;
-    margin: 20px 0 0 5px;
-}
-
-#right-container {
-    width: 320px;
-    float: left;
-}
-
-#calendar {
-    height: 330px;
-    box-shadow: rgba(0, 0, 0, 0.2) 10px 10px 10px;
-}
-
-.calendar-bar a {
-    display: block;
-    float: left;
-    line-height: 55px;
-    border-right: solid 2px #3a414d;
-    border-bottom: solid 2px #3a414d;
-    text-align: center;
-}
-
-.arrow {
-    width: 55px;
-}
-
-.month {
-    width: 210px;
-}
-
-.calendar-bar h2 {
-    padding: 0;
-}
-
-.calendar-container {
-    width: 320px;
-    height: 275px;
-    background: #f97e76;
-}
-
-.daysWeek {
-    background: #2e3641;
-    width: 320px;
-    height: 40px;
-}
-
-.daysWeek li {
-    color: #ffffff;
-    display: inline-block;
-    padding: 10px 0;
-    width: 40px;
-    text-align: center;
-    padding-left: 15px;
-}
-
-.calendar {
-    text-align: center;
-    width: 310px;
-    margin-left: 8px;
-}
-
-.days a {
-    color: #ffffff;
-    font-size: 24px;
-}
-
-.days td {
-    padding: 7px 0px;
-}
-
-.daysOut a {
-    color: #fbb2ad;
-}
-
-.today {
-    background: #2e3641;
-}
-
-#recentPosts {
-    margin-top: 30px;
-    box-shadow: rgba(0, 0, 0, 0.2) 10px 10px 10px;
-}
-
-.scroll {
-    display: block;
-    line-height: 55px;
-    width: 55px;
-    position: absolute;
-    /*.more-bar is relative*/
-    top: 0;
-    right: 0;
-    text-align: center;
-    background: #9eb2c0;
-    color: #ffffff;
-    -webkit-transition: background .2s;
-    -moz-transition: background .2s;
-    -o-transition: background .2s;
-    -ms-transition: background .2s;
-    transition: background .2s;
-}
-
-.scroll:hover {
-    text-decoration: none;
-    background: #90A6B6;
-}
-
-#categories {
-    height: 305px;
-    margin-top: 10px;
-    box-shadow: rgba(0, 0, 0, 0.2) 10px 10px 10px;
-}
-
-#categories input[type=text] {
-    width: 280px;
-    height: 35px;
-    font-size: 18px;
-    font-weight: bold;
-}
-
-#categories label {
-    color: #a4b7c4;
-    font-size: 14px;
-    font-family: sans-serif;
-}
-
-.categories-checkbox + label:before {
-    display: inline-block;
-    margin: 10px 10px 0 20px;
-}
-
-#categories .btn {
-    width: 80px;
-}
-
-.save {
-    float: left;
-    margin: 15px 0 0 20px;
-    background: #a8bd44;
-    -webkit-transition: background .5s ease-out;
-    -moz-transition: background .5s ease-out;
-    -o-transition: background .5s ease-out;
-    -ms-transition: background .5s ease-out;
-    transition: background .5s ease-out;
-}
-
-.save:hover {
-    background: #97AA3C;
-}
-
-.delete {
+#cssmenu.align-right > ul {
     float: right;
-    margin: 15px 20px 0 0;
 }
-
-#moreOptions {
-    height: 250px;
-    margin-top: 60px;
-    box-shadow: rgba(0, 0, 0, 0.2) 10px 10px 10px;
+#cssmenu.align-right > ul > li:hover > ul {
+    left: auto;
+    right: 0;
 }
-
-.moreOptions-bar a {
-    display: inline-block;
-    float: left;
-    line-height: 55px;
-    width: 106.66666666667px;
-    text-align: center;
-    font-weight: bold;
-    font-size: 16px;
+#cssmenu.align-right ul ul li:hover > ul {
+    right: 100%;
+    left: auto;
 }
-
-.popular {
-    background: #ffffff;
-    color: #c5d2dc;
+#cssmenu.align-right ul ul li a {
+    text-align: right;
 }
-
-.popular:hover {
-    text-decoration: none;
+#cssmenu > ul > li:after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 0;
+    top: 0;
+    z-index: 0;
+    background: red;
+    -webkit-transition: height .2s;
+    -moz-transition: height .2s;
+    -ms-transition: height .2s;
+    -o-transition: height .2s;
+    transition: height .2s;
 }
-
-.comments-recent {
-    background: #c5d2dc;
+#cssmenu > ul > li.has-sub > a {
+    padding-right: 40px;
+}
+#cssmenu > ul > li.has-sub > a:after {
+    display: block;
+    content: "";
+    background: deepskyblue;
+    height: 12px;
+    width: 12px;
+    position: absolute;
+    border-radius: 13px;
+    right: 14px;
+    top: 16px;
+}
+#cssmenu > ul > li.has-sub > a:before {
+    display: block;
+    content: "";
+    border: 4px solid transparent;
+    border-top-color: darkgrey;
+    z-index: 2;
+    height: 0;
+    width: 0;
+    position: absolute;
+    right: 16px;
+    top: 21px;
+}
+#cssmenu > ul > li > a {
     color: #ffffff;
-    -webkit-transition: background .2s;
-    -moz-transition: background .2s;
-    -o-transition: background .2s;
-    -ms-transition: background .2s;
-    transition: background .2s;
-}
-
-.comments-recent:hover {
-    text-decoration: none;
-    background: #9eb2c0;
-}
-
-.popular {
-    float: left;
-}
-
-.profile-img {
-    width: 55px;
-    height: 55px;
-    background: #786665;
-    float: left;
-    margin: 15px 0 0 20px;
-}
-
-.popular p {
-    float: left;
-    margin-left: 15px;
-}
-
-.popular a:first-child {
+    padding: 15px 20px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
     font-size: 14px;
-    color: #f97e76;
-    font-weight: 900;
-    line-height: 200%;
+    z-index: 2;
+    position: relative;
+}
+#cssmenu > ul > li:hover:after,
+#cssmenu > ul > li.active:after {
+    height: 100%;
+}
+#cssmenu > ul > li:hover > a,
+#cssmenu > ul > li.active > a {
+    color: steelblue;
+}
+#cssmenu > ul > li:hover > a:after,
+#cssmenu > ul > li.active > a:after {
+    background: royalblue;
+}
+#cssmenu > ul > li:hover > a:before,
+#cssmenu > ul > li.active > a:before {
+    border-top-color: #ffffff;
+}
+#cssmenu > ul > li:hover > ul {
+    left: 0;
+}
+#cssmenu > ul > li:hover > ul > li {
+    max-height: 72px;
+    position: relative;
+}
+#cssmenu #menu-button {
+    display: none;
+}
+#cssmenu > ul > li > a {
+    display: block;
+}
+#cssmenu > ul > li {
+    width: auto;
+}
+#cssmenu > ul > li > ul {
+    width: 170px;
+    display: block;
+}
+#cssmenu > ul > li > ul > li {
+    width: 170px;
+    display: block;
+}
+p {
+    color: steelblue;
+}
+* {margin: 0; padding: 0;}
+
+body {
+<!-- src: http://subtlepatterns.com/?p=1045 -->
+    background: #010101
+}
+
+#container {
+    width: 1000px;
+    overflow: hidden;
+    margin: 50px auto;
+    background: white;
+
+}
+/*header*/
+header {
+    width: 800px;
+    margin: 40px auto;
+}
+
+header h1 {
+    text-align: center;
+    font: 100 60px/1.5 Helvetica, Verdana, sans-serif;
+
+}
+
+header p {
+    font: 100 15px/1.5 Helvetica, Verdana, sans-serif;
+    text-align: justify;
+}
+
+/*photobanner*/
+
+.photobanner {
+    height: 233px;
+    width: 3550px;
+    margin-bottom: 80px;
+}
+/*keyframe animations*/
+.first {
+    -webkit-animation: bannermove 30s linear infinite;
+    -moz-animation: bannermove 30s linear infinite;
+    -ms-animation: bannermove 30s linear infinite;
+    -o-animation: bannermove 30s linear infinite;
+    animation: bannermove 30s linear infinite;
+}
+
+@keyframes "bannermove" {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -2125px;
+    }
+
+}
+
+@-moz-keyframes bannermove {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -2125px;
+    }
+
+}
+
+@-webkit-keyframes "bannermove" {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -2125px;
+    }
+
+}
+
+@-ms-keyframes "bannermove" {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -2125px;
+    }
+
+}
+
+@-o-keyframes "bannermove" {
+    0% {
+        margin-left: 0px;
+    }
+    100% {
+        margin-left: -2125px;
+    }
+
+}
+.container {
+    max-width: 400px;
+    background-color: black;
+    margin: 0 auto;
+    text-align: center;
+    position: relative;
+}
+.container div {
+    background-color: white;
+    width: 100%;
+    display: inline-block;
+    display: none;
+}
+.container img {
+    width: 100%;
+    height: auto;
+}
+
+button {
+    position: absolute;
+}
+
+.next {
+    right: 5px;
+}
+
+.prev {
+    left: 5px;
 }
