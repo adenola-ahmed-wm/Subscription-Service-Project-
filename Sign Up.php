@@ -5,13 +5,13 @@
     <title> Sign Up </title>
     <link href="https://assets.onestore.ms/cdnfiles/onestorerolling-1601-22000/shell/v3/scss/shell.min.css"
           rel="stylesheet" type="text/css" media="screen"/>
-    <link href="signin.css" rel="stylesheet" type="text/css">
+    <link href="style.css" rel="stylesheet" type="text/css">
     <script src="signin.js" type="text/javascript"></script>
 </head>
 <body>
 <?php
 try {
-    $dbh = new PDO('mysql:host=127.0.0.1;dbname=subdb', 'root', 'root');
+    $dbh = new PDO('mysql:host=127.0.0.1;dbname=Subscription_Service', 'root', 'root');
 } catch (PDOException $e) {
     print "Error!: " . $e->getMessage() . "<br/>";
 die();
