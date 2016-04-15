@@ -23,38 +23,38 @@ try {
     $dbh = new PDO('mysql:host=127.0.0.1;dbname=Subscription_Service', 'root', 'root');
 } catch (PDOException $e) {
     print "Error!: " . $e->getMessage() . "<br/>";
-die();
+    die();
 }
 if(@$_POST['formSubmit'] == "Submit")
 {
-$errorMessage = "";
-if(empty($_POST['username']))
-{
-$errorMessage = "<li>You forgot to enter your username.</li>";
-}
-if(empty($_POST['email']))
-{
-$errorMessage = "<li>You forgot to enter your email.</li>";
-}
-if(empty($_POST['password']))
-{
-$errorMessage = "<li>You forgot to enter your last password.</li>";
-}
-$stmt = $dbh->prepare("INSERT INTO Subscribe (username, email, password ) VALUES (?, ?, ?)");
-$result = $stmt->execute(array($_POST['username'], $_POST['email'], $_POST['password']));
-if(!$result){
-print_r($stmt->errorInfo());
-}
-else{
-$msg = 'Thank you for subscribing to Shelved.';
-$from = 'admin@shelved.com';
-mail($_POST['email'], 'Shelved Subscription' , $msg, 'From:' . $from);
-}
-if(!empty($errorMessage))
-{
-echo("<p>There was an error with your form:</p>\n");
-echo("<ul>" . $errorMessage . "</ul>\n");
-}
+    $errorMessage = "";
+    if(empty($_POST['username']))
+    {
+        $errorMessage = "<li>You forgot to enter your username.</li>";
+    }
+    if(empty($_POST['email']))
+    {
+        $errorMessage = "<li>You forgot to enter your email.</li>";
+    }
+    if(empty($_POST['password']))
+    {
+        $errorMessage = "<li>You forgot to enter your last password.</li>";
+    }
+    $stmt = $dbh->prepare("INSERT INTO Subscribe (username, email, password ) VALUES (?, ?, ?)");
+    $result = $stmt->execute(array($_POST['username'], $_POST['email'], $_POST['password']));
+    if(!$result){
+        print_r($stmt->errorInfo());
+    }
+    else{
+        $msg = 'Thank you for subscribing to Shelved.';
+        $from = 'admin@shelved.com';
+        mail($_POST['email'], 'Shelved Subscription' , $msg, 'From:' . $from);
+    }
+    if(!empty($errorMessage))
+    {
+        echo("<p>There was an error with your form:</p>\n");
+        echo("<ul>" . $errorMessage . "</ul>\n");
+    }
 }?>
 <div class="site__container">
     <h1 style="text-align: center; font-size: 70px;">Sign up</h1>
