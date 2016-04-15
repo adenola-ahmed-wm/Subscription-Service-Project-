@@ -6,7 +6,6 @@
     <title>Subscribe</title>
     <link rel="stylesheet" type="text/css" href="stylesheet.css" />
     <script src="javascript.js" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="stylesheet.css"/>
 </head>
 
 <body>
