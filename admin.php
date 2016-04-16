@@ -4,11 +4,11 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Guitar Wars - High Scores Administration</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body>
-<h2>Guitar Wars - High Scores Administration</h2>
-<p>Below is a list of all Guitar Wars high scores. Use this page to remove scores as needed.</p>
+<h2>Phones</h2>
+<p>Suscribers Email</p>
 <hr />
 ​
 <?php
@@ -18,7 +18,7 @@ require_once ('authorize.php');
 // Connect to the database
 $dbh = new PDO('mysql:host=localhost;dbname=Subscription_Service', 'root', 'root');
 // Retrieve the score data from MySQL
-$query = "SELECT * FROM Subscribe ORDER BY score DESC, date ASC";
+$query = "SELECT * FROM Subscribe ORDER BY email DESC, date ASC";
 $stmt = $dbh->prepare($query);
 $stmt->execute();
 $result = $stmt ->fetchAll();
@@ -31,11 +31,11 @@ foreach ($result as $row) {
     echo '<td>' . $row['score'] . '</td>';
     echo '<td><a href="removescore.php?id=' . $row['id'] . '&amp;date=' . $row['date'] .
         '&amp;name=' . $row['name'] . '&amp;score=' . $row['score'] .
-        '&amp;screenshot=' . $row['screenshot'] . '">Remove</a>';
+        '&amp;email=' . $row['email'] . '">Remove</a>';
     if($row['approved']== 0){
         echo ' / <a href="approvescore.php?id=' . $row['id'] . '&amp;date=' . $row['date'] .
             '&amp;name=' . $row['name'] . '&amp;score=' . $row['score'] .
-            '&amp;screenshot=' . $row['screenshot'] . '">Approve</a></>';
+            '&amp;email=' . $row['email'] . '">Approve</a></>';
     }
     echo '</td></tr>';
 }
@@ -43,4 +43,3 @@ echo '</table>';
 ?>
 </body>
 </html>
-Add Comment

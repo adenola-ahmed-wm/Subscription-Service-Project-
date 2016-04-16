@@ -1,4 +1,4 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+5<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
 <head>
@@ -13,6 +13,7 @@
     <ul>
         <li class="active"><a href='index.php'><span>Home</span></a></li>
         <li style="float: right;"><a href='Sign%20Up.php'><span>Sign Up</span></a></li>
+        <li class="active"><a href='phones.php'><span>Phones</span></a></li>
     </ul>
 </div>
 ​

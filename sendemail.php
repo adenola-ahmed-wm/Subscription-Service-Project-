@@ -4,17 +4,16 @@
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>Make Me Elvis - Send Email</title>
-    <link rel="stylesheet" type="text/css" href="style.css" />
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
 </head>
 <body>
-​<img src="blankface.jpg" width="161" height="350" alt="" style="float:right" />
-<img name="elvislogo" src="elvislogo.gif" width="229" height="32" border="0" alt="Make Me Elvis" />
+
 <p><strong>Private:</strong> For Elmer's use ONLY<br />
     Write and send an email to mailing list members.</p>
 <?php
 //make the check for whether or not the user actually submitted a form
 if (isset($_POST['submit'])) {
-    $from = 'elmer@makemeelvis.com';
+    $from = 'Phonesadmin.com';
     $subject = $_POST['subject'];
     $text = $_POST['elvismail'];
     //set the initial value of the flag
@@ -54,8 +53,8 @@ if ($output_form) {
     <?php
 }
 //converted all mysqli to PDO
-$dbh = new PDO('mysql:host=localhost;dbname=elvis_store', 'root', 'root');
-$query = "SELECT * FROM email_list";
+$dbh = new PDO('mysql:host=localhost;dbname=Subscription_Service', 'root', 'root');
+$query = "SELECT * FROM Subscribe";
 $stmt = $dbh->prepare($query);
 $result = $stmt->execute();
 // Change this to a for each loop

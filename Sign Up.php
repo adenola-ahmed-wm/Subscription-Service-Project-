@@ -5,13 +5,25 @@
     <title> Sign Up </title>
     <link href="https://assets.onestore.ms/cdnfiles/onestorerolling-1601-22000/shell/v3/scss/shell.min.css"
           rel="stylesheet" type="text/css" media="screen"/>
-    <link href="signin.css" rel="stylesheet" type="text/css">
-    <script src="signin.js" type="text/javascript"></script>
+    <link rel="stylesheet" type="text/css" href="stylesheet.css" />
+    <script src="javascript.js" type="text/javascript"></script>
 </head>
 <body>
+<div style="z-index: 10" id='cssmenu'>
+    <ul>
+        <li class="active"><a href='index.php'><span>Home</span></a></li>
+        <li style="float: right;"><a href='Sign%20Up.php'><span>Sign Up</span></a></li>
+        <li class="active"><a href='phones.php'><span>Phones</span></a></li>
+    </ul>
+
+</div>
+​
+<div id = bodyText>
+    ​
+</div>
 <?php
 try {
-    $dbh = new PDO('mysql:host=127.0.0.1;dbname=Subscription_Subscribe', 'root', 'root');
+    $dbh = new PDO('mysql:host=127.0.0.1;dbname=Subscription_Service', 'root', 'root');
 } catch (PDOException $e) {
     print "Error!: " . $e->getMessage() . "<br/>";
     die();
@@ -31,7 +43,7 @@ if(@$_POST['formSubmit'] == "Submit")
     {
         $errorMessage = "<li>You forgot to enter your last password.</li>";
     }
-    $stmt = $dbh->prepare("INSERT INTO users (username, email, password ) VALUES (?, ?, ?)");
+    $stmt = $dbh->prepare("INSERT INTO Subscribe (username, email, password ) VALUES (?, ?, ?)");
     $result = $stmt->execute(array($_POST['username'], $_POST['email'], $_POST['password']));
     if(!$result){
         print_r($stmt->errorInfo());
